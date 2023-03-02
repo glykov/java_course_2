@@ -36,4 +36,12 @@ public class Student {
     public int getStudentSocre() {
         return magicScore + transgressionScore;
     }
+
+    public String compare(Student other) {
+        return this.getName() + " has " +
+                (this.getMagicScore() > other.getMagicScore() ? "higher" : "less") +
+                " magic power and " +
+                (this.getTransgressionScore() > other.getTransgressionScore() ? "longer" : "shorter") +
+                " transgression distance than " + other.getName();
+    }
 }

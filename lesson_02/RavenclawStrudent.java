@@ -49,6 +49,18 @@ public class RavenclawStrudent extends Student{
     }
 
     @Override
+    public String compare(Student other) {
+        if (this.getClass() != other.getClass()) {
+            return super.compare(other);
+        } else {
+            RavenclawStrudent o = (RavenclawStrudent) other;
+            return (this.getFacultyScore() > o.getFacultyScore() ? this.getName() : o.getName()) +
+                    " is better Ravenclaw student than " +
+                    (this.getFacultyScore() < o.getFacultyScore() ? this.getName() : o.getName());
+        }
+    }
+
+    @Override
     public String toString() {
         return super.getName() +
                 " has magic = " + super.getMagicScore() +

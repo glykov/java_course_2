@@ -38,6 +38,17 @@ public class GryffindorStudent extends Student {
         return nobilityScore + honorScore + braveryScore;
     }
 
+    public String compare(Student other) {
+        if (this.getClass() != other.getClass()) {
+            return super.compare(other);
+        } else {
+            GryffindorStudent o = (GryffindorStudent) other;
+            return (this.getFacultyScore() > o.getFacultyScore() ? this.getName() : o.getName()) +
+                    " is better Gryffindor student than " +
+                    (this.getFacultyScore() < o.getFacultyScore() ? this.getName() : o.getName());
+        }
+    }
+
     @Override
     public String toString() {
         return super.getName() +

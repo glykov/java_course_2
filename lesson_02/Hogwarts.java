@@ -42,40 +42,11 @@ public class Hogwarts {
             new RavenclawStrudent("Marcus Belby", rand.nextInt(100), rand.nextInt(100),
                     rand.nextInt(100), rand.nextInt(100), rand.nextInt(100), rand.nextInt(100));
 
-    public static String compareStudents(Student first, Student second) {
-        return first.getName() + " has " +
-                (first.getMagicScore() > second.getMagicScore() ? "higher" : "less") +
-                " magic power and " +
-                (first.getTransgressionScore() > second.getTransgressionScore() ? "longer" : "shorter") +
-                " transgression distance than " + second.getName();
-    }
-
-    public static String compareStudents(GryffindorStudent first, GryffindorStudent second) {
-        return (first.getFacultyScore() > second.getFacultyScore() ? first.getName() : second.getName()) +
-                " is better Gryffindor student than " +
-                (first.getFacultyScore() < second.getFacultyScore() ? first.getName() : second.getName());
-    }
-
-    public static String compareStudents(RavenclawStrudent first, RavenclawStrudent second) {
-        return (first.getFacultyScore() > second.getFacultyScore() ? first.getName() : second.getName()) +
-                " is better Ravenclaw student than " +
-                (first.getFacultyScore() < second.getFacultyScore() ? first.getName() : second.getName());
-    }
-
-    public static String compareStudents(HufflepuffStudent first, HufflepuffStudent second) {
-        return (first.getFacultyScore() > second.getFacultyScore() ? first.getName() : second.getName()) +
-                " is better Hufflepuff student than " +
-                (first.getFacultyScore() < second.getFacultyScore() ? first.getName() : second.getName());
-    }
-
-    public static String compareStudents(SlytherinStudent first, SlytherinStudent second) {
-        return (first.getFacultyScore() > second.getFacultyScore() ? first.getName() : second.getName()) +
-                " is better Slytherin student than " +
-                (first.getFacultyScore() < second.getFacultyScore() ? first.getName() : second.getName());
-    }
-
     public static void main(String[] args) {
-        System.out.println(compareStudents(granger, weasley));
-        System.out.println(compareStudents(malfoy, smith));
+        System.out.println(granger.compare(weasley));
+        System.out.println(diggory.compare(chang));
+        System.out.println("================================");
+        System.out.println(malfoy.compare(smith));
+        System.out.println(malfoy.compare(goyle));
     }
 }
