@@ -27,31 +27,19 @@ public class EmployeeController {
     @GetMapping("/add")
     public Object add(@RequestParam("firstName") String firstName,
                         @RequestParam("lastName") String lastName) {
-        try {
             return service.addEmployee(firstName, lastName);
-        } catch (RuntimeException e) {
-            return e;
-        }
     }
 
     @GetMapping("/remove")
     public Object remove(@RequestParam("firstName") String firstName,
                            @RequestParam("lastName") String lastName) {
-        try {
             return service.removeEmployee(firstName, lastName);
-        } catch (EmployeeNotFoundException e) {
-            return e;
-        }
     }
 
     @GetMapping("/find")
     public Object find(@RequestParam("firstName") String firstName,
                          @RequestParam("lastName") String lastName) {
-        try {
             return service.findEmployee(firstName, lastName);
-        } catch (EmployeeNotFoundException e) {
-            return e;
-        }
     }
 
     @GetMapping("/showall")
