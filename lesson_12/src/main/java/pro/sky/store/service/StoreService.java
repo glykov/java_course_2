@@ -15,12 +15,8 @@ public class StoreService {
         this.cart = cart;
     }
 
-    public void addProducts(MultiValueMap<String, String> input) {
-        for (var v : input.values()) {
-            cart.addAll(v.stream()
-                    .map(Integer::parseInt)
-                    .collect(Collectors.toList()));
-        }
+    public void addProducts(List<Integer> input) {
+        cart.addAll(input);
     }
 
     public List<Integer> getProducts() {

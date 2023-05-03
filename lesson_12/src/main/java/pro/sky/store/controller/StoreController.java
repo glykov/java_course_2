@@ -22,7 +22,7 @@ public class StoreController {
     }
 
     @GetMapping("/order/add")
-    public void addProducts(@RequestParam MultiValueMap<String, String> id){
+    public void addProducts(@RequestParam List<Integer> id){
         service.addProducts(id);
     }
 
